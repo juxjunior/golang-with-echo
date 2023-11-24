@@ -1,0 +1,45 @@
+basePath: /
+definitions:
+  model.Employee:
+    properties:
+      age:
+        type: integer
+      division:
+        type: string
+      email:
+        type: string
+      full_name:
+        type: string
+      id:
+        type: integer
+    type: object
+host: localhost:1323
+info:
+  contact: {}
+  description: Contoh Deskcripsi
+  title: API Documentation Employee
+  version: "1"
+paths:
+  /emp:
+    post:
+      consumes:
+      - application/json
+      description: Create a new employee with the input paylod
+      parameters:
+      - description: Create employee
+        in: body
+        name: models,Item
+        required: true
+        schema:
+          $ref: '#/definitions/model.Employee'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Employee'
+      summary: Create a new Employee
+      tags:
+      - items
+swagger: "2.0"

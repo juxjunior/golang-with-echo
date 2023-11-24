@@ -1,0 +1,69 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Contoh Deskcripsi",
+        "title": "API Documentation Employee",
+        "contact": {},
+        "version": "1"
+    },
+    "host": "localhost:1323",
+    "basePath": "/",
+    "paths": {
+        "/emp": {
+            "post": {
+                "description": "Create a new employee with the input paylod",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "items"
+                ],
+                "summary": "Create a new Employee",
+                "parameters": [
+                    {
+                        "description": "Create employee",
+                        "name": "models,Item",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/model.Employee"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/model.Employee"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "model.Employee": {
+            "type": "object",
+            "properties": {
+                "age": {
+                    "type": "integer"
+                },
+                "division": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "full_name": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                }
+            }
+        }
+    }
+}
