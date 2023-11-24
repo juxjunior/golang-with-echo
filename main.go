@@ -48,6 +48,6 @@ func main() {
 	// swagger
 	e.GET("/swagger/*", echoSwagger.WrapHandler)
 
-	var PORT = os.Getenv("SERVER_PORT")
+	var PORT = os.Getenv("PORT")
 	e.Logger.Fatal(e.Start(":" + PORT))
 }
